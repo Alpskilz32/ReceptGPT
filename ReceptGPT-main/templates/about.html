@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - ReceptGPT</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Play&display=swap" rel="stylesheet"> 
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/team.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/about.css') }}">
+</head>
+
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <img src="{{ url_for('static', filename='images/logoChef.png') }}" alt="ReceptGPT Logo">
+                <h1>ReceptGPT</h1>
+            </div>
+            <ul>
+                <li><a href="{{ url_for('index') }}">Home</a></li>
+                <li><a href="{{ url_for('recipes') }}">Recipes</a></li>
+                <li><a href="{{ url_for('gpt') }}">GPT</a></li>
+                <li><a href="{{ url_for('about') }}" class="active">About</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+    <section class="mainAbout">
+        <div class="about-content">
+            <h2>About Us</h2>
+            <p>ReceptGPT is your ultimate cooking companion powered by AI. Our mission is to simplify the cooking experience by providing personalized recipe recommendations and helpful cooking instructions. Whether you're a seasoned chef or a beginner in the kitchen, ReceptGPT has something for everyone.</p>
+            <p>Our team consists of passionate developers and designers dedicated to delivering high-quality content and innovative features to enhance your culinary journey. We strive to make cooking fun, easy, and accessible to everyone.</p>
+        </div>
+    </section>
+
+    <section class="mainGoals">
+      <div class="goals-content">
+          <h2>Our Goals</h2>
+          <p>At ReceptGPT, we have a clear vision and purpose driving our work. Our primary goals include:</p>
+          <ul>
+              <li>Utilizing AI to simplify the cooking experience for users of all skill levels.</li>
+              <li>Providing personalized recipe recommendations tailored to individual preferences and dietary restrictions.</li>
+              <li>Offering comprehensive cooking instructions and tips to enhance culinary skills.</li>
+              <li>Promoting accessibility to cooking resources and fostering a love for cooking in everyone.</li>
+          </ul>
+          <p>We believe that with the power of technology and a passion for cooking, we can revolutionize how people approach food preparation and create delightful experiences in the kitchen.</p>
+      </div>
+  </section>
+
+
+
+
+    <section class="about">
+        <div class="cntAbout">
+          <h2>Our team</h2>
+          <p>Meet our team of experts dedicated to providing top-notch service.</p>
+        </div>
+      <div class="alperen">
+          <div class="container">
+            <div class="phtAbout">
+            <img src="{{ url_for('static', filename='images/fotoAlperen.jpeg') }}" alt="Profile Photo">
+          </div>
+          <div class="txtAbout">
+            <h2>Alperen (web designer) </h2>
+            <p>"As a web designer, I create attractive visual designs and layouts for websites to provide an optimal user experience."</p>
+          </div>
+      </div>
+      <div class="sam">
+          <div class="container">
+            <div class="phtAbout">
+            <img src="{{ url_for('static', filename='images/fotoSam3.jpeg') }}" alt="Profile Photo">
+          </div>
+          <div class="txtAbout">
+            <h2>Sam (frontend developer)</h2>
+            <p>"As a frontend developer, I'm responsible for designing and implementing the user interface of websites." </p>
+          </div>
+      </div>
+      </section>
+
+      <section class="contact">
+        <div class="contact-content">
+      </section>
+
+
+
+  <section class="cntReviews">
+    <div class="divReviews"> 
+    <h2>Reviews</h2>
+    <div id="reviews">
+        <!-- Reviews will be dynamically added here -->
+    </div>
+    <form id="reviewForm">
+      <h3>Write a review</h3>
+        <input type="text" id="userName" placeholder="Your Name" required>
+        <input type="number" id="stars" placeholder="Stars (1-5)" min="1" max="5" required>
+        <textarea id="reviewText" placeholder="Write your review..." maxlength="500" rows="6" required></textarea>
+        <button id="reviewSubmit" type="submit">Submit Review</button>
+    </form>
+    </div>
+  </section>
+
+<!--
+  <section class="cntContact">
+    <h2>Contact Us</h2>
+    <form id="contactForm">
+      <input type="text" id="contactName" placeholder="Your Name" required>
+      <input type="email" id="contactEmail" placeholder="Your Email" required>
+      <textarea id="contactMessage" placeholder="Write your message..." required></textarea>
+      <button id="contactSubmit" type="submit">Submit</button>
+      <div id="contactResponse"></div>
+      </form>
+  </section> -->
+
+</main>
+
+  <footer>
+    <div class="footer">
+      <div class="row">
+        <a href="https://www.facebook.com/" target="_blank"><i class="fa fa-facebook"></i></a>
+        <a href="https://www.instagram.com/" target="_blank"><i class="fa fa-instagram"></i></a>
+        <a href="https://www.youtube.com/" target="_blank"><i class="fa fa-youtube"></i></a>
+        <a href="https://twitter.com/" target="_blank"><i class="fa fa-twitter"></i></a>
+      </div>
+      <div class="row">
+        <ul>
+          <li><a href="{{ url_for('index') }}">Home</a></li>
+          <li><a href="{{ url_for('recipes') }}"> Recipes </a></li>
+          <li><a href="{{ url_for('gpt') }}">GPT</a></li>
+          <li><a href="{{ url_for('about') }}">About</a></li>
+        </ul>
+      </div>
+      <div class="row">
+       INFERNO Copyright © 2024 Inferno - All rights reserved || Designed By: Alperen Arslan
+      </div>
+    </div>
+  </footer>
+
+  <script src="{{ url_for('static', filename='js/review_input_service.js') }}"></script>
+
+</body>
+</html>
+
+
+
+

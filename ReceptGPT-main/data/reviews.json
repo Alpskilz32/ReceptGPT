@@ -1,0 +1,62 @@
+[
+    {
+        "userName": "User1",
+        "stars": 5,
+        "reviewText": "This recipe is amazing!"
+    },
+    {
+        "userName": "User2",
+        "stars": 4,
+        "reviewText": "Pretty good, but could use some improvements."
+    },
+    {
+        "userName": "User3",
+        "stars": 3,
+        "reviewText": "It's okay, nothing special."
+    },
+    {
+        "userName": "User4",
+        "stars": "5",
+        "reviewText": "Looks good!!"
+    },
+    {
+        "userName": "Daan",
+        "stars": 4,
+        "reviewText": "good, I like your idea"
+    },
+    {
+        "userName": "User1",
+        "stars": 5,
+        "reviewText": "This recipe is amazing!"
+    },
+    {
+        "userName": "User2",
+        "stars": 4,
+        "reviewText": "Pretty good, but could use some improvements."
+    },
+    {
+        "userName": "User3",
+        "stars": 3,
+        "reviewText": "It's okay, nothing special."
+    },
+    {
+        "userName": "User4",
+        "stars": "5",
+        "reviewText": "Looks good!!"
+    },
+    {
+        "userName": "Daan",
+        "stars": 4,
+        "reviewText": "good, I like your idea"
+    },
+    {
+        "userName": "h",
+        "stars": 4,
+        "reviewText": "4rrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr  rrrrrrrrrrrrrrr rrrrrrrrrrrrrr rrrrrrrrrrrrrrrrrrrrrrrrrr rrrrrrrrrrrrrrrrrrrrrrrr rrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr r mkldddddd om4r fofm4 rrrrrrrrrrrrrrrrrrrrr f kgr,                rgfgkr"
+    },
+    {
+        "userName": "h",
+        "stars": 2,
+        "reviewText": "What is Lorem Ipsum?\nLorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more re"
+    }
+]
