@@ -7,21 +7,21 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Play&display=swap" rel="stylesheet"> 
-    <link rel="stylesheet" href="about.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/about.css') }}">
 </head>
 
 <body>
     <header>
         <nav>
             <div class="logo">
-                <img src="logoChef.png" alt="ReceptGPT Logo">
+                <img src="{{ url_for('static', filename='images/logoChef.png') }}" alt="ReceptGPT Logo">
                 <h1>ReceptGPT</h1>
             </div>
             <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="recipes.html">Recipes</a></li>
-                <li><a href="GPT.html">GPT</a></li>
-                <li><a href="about.html" class="active">About</a></li>
+                <li><a href="{{ url_for('index') }}">Home</a></li>
+                <li><a href="{{ url_for('recipes') }}">Recipes</a></li>
+                <li><a href="{{ url_for('gpt') }}">GPT</a></li>
+                <li><a href="{{ url_for('about') }}" class="active">About</a></li>
             </ul>
         </nav>
     </header>
@@ -45,7 +45,7 @@
       <div class="alperen">
           <div class="container">
             <div class="phtAbout">
-            <img src="fotoAlperen.jpeg" alt="Profile Photo">
+            <img src="{{ url_for('static', filename='images/fotoAlperen.jpeg') }}" alt="Profile Photo">
           </div>
           <div class="txtAbout">
             <h2>Alperen (web designer) </h2>
@@ -55,7 +55,7 @@
       <div class="sam">
           <div class="container">
             <div class="phtAbout">
-            <img src="fotoSam3.jpeg" alt="Profile Photo">
+            <img src="{{ url_for('static', filename='images/fotoSam3.jpeg') }}" alt="Profile Photo">
           </div>
           <div class="txtAbout">
             <h2>Sam (frontend developer)</h2>
@@ -154,10 +154,10 @@
       </div>
       <div class="row">
         <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="Recipes.html">Recipes.html</a></li>
-          <li><a href="GPT.html"> GPT</a></li>
-          <li><a href="about.html">Contact us</a></li>
+          <li><a href="{{ url_for('index') }}">Home</a></li>
+          <li><a href="{{ url_for('recipes') }}"> Recipes </a></li>
+          <li><a href="{{ url_for('gpt') }}">GPT</a></li>
+          <li><a href="{{ url_for('about') }}">About</a></li>
         </ul>
       </div>
       <div class="row">
@@ -166,7 +166,7 @@
     </div>
   </footer>
 
-  <script src="review_input_service.js"></script>
+  <script src="{{ url_for('static', filename='js/review_input_service.js') }}"></script>
  
 <!-- 
   <script> 

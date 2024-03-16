@@ -7,36 +7,35 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Play&display=swap" rel="stylesheet"> 
-    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/index.css') }}">
 </head>
 <body>
     <header>
         <nav>
             <div class="logo">
-                <img src="logoChef.png" alt="ReceptGPT Logo">
+                <img src="{{ url_for('static', filename='images/logoChef.png') }}" alt="ReceptGPT Logo">
                 <h1>ReceptGPT</h1>
             </div>
             <ul>
-              <li><a class="active" href="index.html">Home</a></li>
-              <li><a href="Recipes.html"> Recipes </a></li>
-              <li><a href="GPT.html">GPT</a></li>
-              <li><a href="about.html">About</a></li>
+              <li><a class="active" href="{{ url_for('index') }}">Home</a></li>
+              <li><a href="{{ url_for('recipes') }}"> Recipes </a></li>
+              <li><a href="{{ url_for('gpt') }}">GPT</a></li>
+              <li><a href="{{ url_for('about') }}">About</a></li>
             </ul>
         </nav>
 
-
-    <div class="hero">
-      <h1>Welcome to ReceptGPT</h1>
-      <p>Explore a world of delicious recipes with AI assistance.</p>
-      <a href="GPT.html" class="btn">Get Started</a>
-    </div>
-</header>
+        <div class="hero">
+          <h1>Welcome to ReceptGPT</h1>
+          <p>Explore a world of delicious recipes with AI assistance.</p>
+          <a href="{{ url_for('gpt') }}" class="btn">Get Started</a>
+        </div>
+    </header>
 
 <main>
   <section class="containers">
     <div class="cnt1">
       <div class="phtAI">
-          <img src="AI1.jpeg" alt="Photo of a kitchen">
+          <img src="{{ url_for('static', filename='images/AI1.jpeg') }}" alt="Photo of a kitchen">
       </div>
        <div class="txtPhtAI">
           <h2>What is ReceptGPT? </h2>
@@ -75,8 +74,8 @@
       <p>With ReceptGPT, you'll save time and effort when searching for recipes and planning meals. Whether you're a novice cook or a seasoned chef, ReceptGPT offers the tools and inspiration you need to create creative and flavorful dishes. </p>
     </div>
     <div class="phtAI"> 
-      <img alt="photo of a kitchen" fetchpriority="high" width="2000" height="695" decoding="async" data-nimg="1" 
-      class="rounded-xl lg:rounded-2xl shadow-xl" style="color:transparent" src="Kithcen4.avif">
+      <img src="{{ url_for('static', filename='images/Kithcen4.avif') }}" alt="photo of a kitchen" 
+      fetchpriority="high" width="2000" height="695" decoding="async" data-nimg="1" class="rounded-xl lg:rounded-2xl shadow-xl" style="color:transparent">
     </div>
  </div>
 
@@ -91,21 +90,21 @@
         using it more often. </p>
         <h3><NAME></h3>
         <h4>Web Designer</h4>
-        <img src="fotoKithcen.jpeg" alt="Profile Photo">
+        <img src="{{ url_for('static', filename='images/') }}" alt="Profile Photo"  transparent="">
       </div>
       <div class="review-text">
         <p>I love the randomizer feature. It's a great way to discover new recipes and learn new dishes. I'm looking forward to
         using it more often. </p>
         <h3><NAME></h3>
         <h4>Web Designer</h4>
-        <img src="fotoKithcen.jpeg" alt="Profile Photo">
+        <img src="{{ url_for('static', filename='images/') }}" alt="Profile Photo">
       </div>
       <div class="review-text">
         <p>I love the randomizer feature. It's a great way to discover new recipes and learn new dishes. I'm looking forward to
         using it more often. </p>
         <h3><NAME></h3>
         <h4>Web Designer</h4>
-        <img src="fotoKithcen.jpeg" alt="Profile Photo">
+        <img src="{{ url_for('static', filename='images/') }}" alt="Profile Photo">
       </div>
   </div>
 </section>
@@ -120,7 +119,7 @@
   <div class="alperen">
       <div class="container">
         <div class="phtAbout">
-        <img src="fotoAlperen.jpeg" alt="Profile Photo">
+        <img src="{{ url_for('static', filename='images/fotoAlperen.jpeg') }}" alt="Profile Photo">
       </div>
       <div class="txtAbout">
         <h2>Alperen (web designer) </h2>
@@ -130,7 +129,7 @@
   <div class="sam">
       <div class="container">
         <div class="phtAbout">
-        <img src="fotoSam3.jpeg" alt="Profile Photo">
+        <img src="{{ url_for('static', filename='images/fotoSam3.jpeg') }}" alt="Profile Photo">
       </div>
       <div class="txtAbout">
         <h2>Sam (frontend developer)</h2>
@@ -152,10 +151,10 @@
   
   <div class="row">
   <ul>
-  <li><a href="index.html">Home</a></li>
-  <li><a href="Recipes.html">Recipes.html</a></li>
-  <li><a href="GPT.html"> GPT</a></li>
-  <li><a href="about.html">Contact us</a></li>
+  <li><a href="{{ url_for('index') }}">Home</a></li>
+  <li><a href="{{ url_for('recipes') }}"> Recipes </a></li>
+  <li><a href="{{ url_for('gpt') }}">GPT</a></li>
+  <li><a href="{{ url_for('about') }}">About</a></li>
   </ul>
   </div>
   

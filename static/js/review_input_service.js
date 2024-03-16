@@ -4,7 +4,7 @@ let reviews = [];
 // Function to fetch reviews from JSON file
 async function fetchReviews() {
     try {
-        const response = await fetch('reviews.json');
+        const response = await fetch('/reviews');  // Updated to match Flask route
         if (!response.ok) {
             throw new Error('Failed to fetch reviews');
         }
@@ -30,22 +30,6 @@ function displayReviews() {
     });
 }
 
-// Function to save reviews to JSON file
-async function saveReviews() {
-    try {
-        const response = await fetch('reviews.json', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application' },
-            body: JSON.stringify(reviews)
-        });
-        if (!response.ok) {
-            throw new Error('Failed to save reviews');
-        }
-    } catch (error) {
-        console.error(error);
-    }
-}
-
 // Function to handle form submission
 async function submitReview(event) {
     event.preventDefault();
@@ -68,16 +52,31 @@ async function submitReview(event) {
         reviewText
     };
 
-    // Add review to array
-    reviews.push(review);
+    // Send the new review to the server
+    try {
+        const response = await fetch('/reviews', {  // Updated to match Flask route for posting reviews
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(review)
+        });
+        if (!response.ok) {
+            throw new Error('Failed to save review');
+        }
 
-    // Save reviews to JSON file
-    saveReviews();
+        // Clear the input fields after successful submission
+        document.getElementById('userName').value = '';
+        document.getElementById('stars').value = '';
+        document.getElementById('reviewText').value = '';
 
-    // Refresh reviews
-    displayReviews();
+        // Re-fetch reviews to update the list with the newly added review
+        await fetchReviews();
+
+    } catch (error) {
+        console.error(error);
+    }
 }
-
 
 // Add event listener to form submission
 document.getElementById('reviewForm').addEventListener('submit', submitReview);

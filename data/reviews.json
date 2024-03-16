@@ -1,0 +1,22 @@
+[
+    {
+        "userName": "User1",
+        "stars": 5,
+        "reviewText": "This recipe is amazing!"
+    },
+    {
+        "userName": "User2",
+        "stars": 4,
+        "reviewText": "Pretty good, but could use some improvements."
+    },
+    {
+        "userName": "User3",
+        "stars": 3,
+        "reviewText": "It's okay, nothing special."
+    },
+    {
+        "userName": "User4",
+        "stars": "5",
+        "reviewText": "Looks good!!"
+    }
+]
