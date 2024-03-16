@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Play&display=swap" rel="stylesheet"> 
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/team.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/about.css') }}">
 </head>
 
@@ -28,14 +29,29 @@
 
     <main>
     <section class="mainAbout">
-        <!-- <img src="KitchenWhite.avif" alt="kitchen photo"> -->
         <div class="about-content">
             <h2>About Us</h2>
             <p>ReceptGPT is your ultimate cooking companion powered by AI. Our mission is to simplify the cooking experience by providing personalized recipe recommendations and helpful cooking instructions. Whether you're a seasoned chef or a beginner in the kitchen, ReceptGPT has something for everyone.</p>
             <p>Our team consists of passionate developers and designers dedicated to delivering high-quality content and innovative features to enhance your culinary journey. We strive to make cooking fun, easy, and accessible to everyone.</p>
         </div>
     </section>
-    </main>
+
+    <section class="mainGoals">
+      <div class="goals-content">
+          <h2>Our Goals</h2>
+          <p>At ReceptGPT, we have a clear vision and purpose driving our work. Our primary goals include:</p>
+          <ul>
+              <li>Utilizing AI to simplify the cooking experience for users of all skill levels.</li>
+              <li>Providing personalized recipe recommendations tailored to individual preferences and dietary restrictions.</li>
+              <li>Offering comprehensive cooking instructions and tips to enhance culinary skills.</li>
+              <li>Promoting accessibility to cooking resources and fostering a love for cooking in everyone.</li>
+          </ul>
+          <p>We believe that with the power of technology and a passion for cooking, we can revolutionize how people approach food preparation and create delightful experiences in the kitchen.</p>
+      </div>
+  </section>
+
+
+
 
     <section class="about">
         <div class="cntAbout">
@@ -64,29 +80,6 @@
       </div>
       </section>
 
-      <!-- 
-      <section class="testimonials">
-        <div class="testimonials-content">
-          <h2>Testimonials</h2>
-          <div class="testimonial">
-            <div class="testimonial-img">
-              <img src="fotoKristina.jpeg" alt="Profile Photo">
-              <p><NAME></p>
-                <p>Chef</p>
-                <p>Kristina is a seasoned chef with a passion for cooking. She has been cooking for over 10 years
-                  and has developed a deep love for the art of cooking. She is a certified professional chef and
-                  has been featured on the Food Network, The Wall Street Journal, and other publications. She
-                  is passionate about sharing her passion for cooking with others through her blog and YouTube
-                  channel. She has a Bachelor of Science in Chemistry from the University of California, San Diego.
-                  Kristina is a graduate of the Full Stack Web Development program at Lambda School. She is
-                  passionate about cooking and loves to share her passion with others. </p>
-                  <p>Kristina is a graduate of the Full Stack Web Development program at Lambda School. She is
-                    passionate about cooking and loves to share her passion with others. </p>
-            </div>
-          </div>
-        </div>
-      </section>-->
-
       <section class="contact">
         <div class="contact-content">
       </section>
@@ -94,55 +87,34 @@
 
 
   <section class="cntReviews">
+    <div class="divReviews"> 
     <h2>Reviews</h2>
     <div id="reviews">
         <!-- Reviews will be dynamically added here -->
     </div>
     <form id="reviewForm">
+      <h3>Write a review</h3>
         <input type="text" id="userName" placeholder="Your Name" required>
         <input type="number" id="stars" placeholder="Stars (1-5)" min="1" max="5" required>
-        <textarea id="reviewText" placeholder="Write your review..." required></textarea>
+        <textarea id="reviewText" placeholder="Write your review..." maxlength="500" rows="6" required></textarea>
         <button id="reviewSubmit" type="submit">Submit Review</button>
     </form>
+    </div>
   </section>
-    
-    
-
 
 <!--
-    <h1>Reviews</h1>
-    <ul id="reviews-list"></ul>
+  <section class="cntContact">
+    <h2>Contact Us</h2>
+    <form id="contactForm">
+      <input type="text" id="contactName" placeholder="Your Name" required>
+      <input type="email" id="contactEmail" placeholder="Your Email" required>
+      <textarea id="contactMessage" placeholder="Write your message..." required></textarea>
+      <button id="contactSubmit" type="submit">Submit</button>
+      <div id="contactResponse"></div>
+      </form>
+  </section> -->
 
-    <h2>Add a Review</h2>
-    <form id="review-form">
-        <label for="user-name">User Name:</label>
-        <input type="text" id="user-name" name="user-name" required><br>
-
-        <label for="review-text">Review:</label>
-        <textarea id="review-text" name="review-text" required></textarea><br>
-
-        <label for="stars">Stars:</label>
-        <input type="number" id="stars" name="stars" min="1" max="5" required><br>
-
-        <button type="submit">Submit Review</button>
-    </form>-->
-  
-
-
-<!-- Form for submitting new reviews -->
-<!--
-<h2>Add Your Review</h2>
-<form id="reviewForm" action="save_review.php" method="post">
-    <input type="text" id="name" name="name" placeholder="Your Name" required><br>
-    <textarea id="review" name="review" placeholder="Your Review" required></textarea><br>
-    <button type="submit">Submit Review</button>
-</form>
-
-<div id="reviews">
-    <!- Reviews will be displayed here ->
-</div>
- -->
-
+</main>
 
   <footer>
     <div class="footer">
@@ -167,73 +139,6 @@
   </footer>
 
   <script src="{{ url_for('static', filename='js/review_input_service.js') }}"></script>
- 
-<!-- 
-  <script> 
-  // Client-side code
-async function saveReviews() {
-  try {
-    const response = await fetch('http://127.0.0.1:5500/about.html/api', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(reviews)
-    });
-    if (!response.ok) {
-      throw new Error('Failed to save reviews');
-    }
-  } catch (error) {
-    console.error(error);
-  }
-}
-  // Function to fetch reviews from the backend API
-  function fetchReviews() {
-      fetch('./reviews_input_service.js')
-          .then(response => response.json())
-          .then(reviews => {
-              // Clear existing reviews
-              const reviewsList = document.getElementById('reviews-list');
-              reviewsList.innerHTML = '';
-
-              // Populate reviews
-              reviews.forEach(review => {
-                  const listItem = document.createElement('li');
-                  listItem.textContent = `User: ${review.user_name}, Stars: ${review.stars}, Review: ${review.review_text}`;
-                  reviewsList.appendChild(listItem);
-              });
-          })
-          .catch(error => console.error('Error fetching reviews:', error));
-  }
-
-  // Function to handle form submission
-  document.getElementById('review-form').addEventListener('submit', function(event) {
-            event.preventDefault();
-
-            const formData = new FormData(this);
-
-            fetch('/api/reviews', {
-                method: 'POST',
-                body: formData
-            })
-            .then(response => response.json(
-              {
-                name: formData.get('user-name'),
-                stars: formData.get('stars'),
-                review: formData.get('review-text')
-              }
-            ))
-            .then(data => {
-                console.log('Review submitted:', data);
-                // After submission, refresh the reviews list
-                fetchReviews();
-                // Clear the form
-                this.reset();
-            })
-            .catch(error => console.error('Error submitting review:', error));
-  });
-
- // Call fetchReviews function when the page loads
- window.onload = fetchReviews;
-</script> -->
 
 </body>
 </html>

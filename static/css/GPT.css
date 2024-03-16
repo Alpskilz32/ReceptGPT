@@ -240,10 +240,10 @@ button[type="submit"]:hover {
 }
 
 #results span {
-  display: grid;
-  grid-template-columns: repeat(6, 90px);
-  grid-auto-rows: 20px;
-  grid-gap: 5px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
   position: relative;
   color: #ffffff;
   border-radius: 6px;

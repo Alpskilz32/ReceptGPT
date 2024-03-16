@@ -108,7 +108,28 @@ nav ul li a.active {
   background-color: #d45a24;
 }
   
+
+
+main {
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.5)50%, rgba(0, 0, 0, 0.5)50%), url("../images/KitchenWood1.avif");
+  background-position: top center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed; 
+  min-height: 100vh;
+  justify-content: center;
+  align-items: center;
+}
+
+
+
+
 /* Main Section Styles */
+.cnt1, .cnt2 {
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.9);
+}
+
+
 .cnt1 {
   background-color: #d45a24;
   display: flex;
@@ -158,7 +179,7 @@ nav ul li a.active {
 
 .cnt2 .phtAI img {
   width: 100%;
-  height: 85vh;
+  min-height: 110vh;
   padding-inline: 20px 0;
   padding-bottom: auto;
 }
@@ -187,10 +208,9 @@ nav ul li a.active {
   align-items: center;
   flex-wrap: wrap;
   height: auto;
-  margin-top: 20px;
-  margin-top: auto;
-  margin-bottom: 100px;
-  padding-top: 100px;
+  margin: 0px 0 0px;
+  padding: 30vh 0;
+  background-color: #ffffff;
 }
 
 .features h2 {
@@ -199,6 +219,7 @@ nav ul li a.active {
   text-align: center;
   justify-content: center;
   width: 100vw;
+  color: #000000;
 }
 
 .features h3 {
@@ -207,15 +228,16 @@ nav ul li a.active {
   text-align: center;
   justify-content: center;
   width: 100vw;
-  margin: 0 0 40px;
+  margin: 10px 0 80px;
+  color: #000000;
 }
 
 .feature {
   background-color: #ec5211d5;
-    flex: 0 0 30%;
+  flex: 0 0 30%;
   text-align: center;
   margin: 20px;
-  padding: 20px;
+  padding: 50px;
   border-radius: 5px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
@@ -238,19 +260,16 @@ nav ul li a.active {
   font-size: 16px;
 }
 
+
+
 /* Section  Styles */
 .cntReviews {
-  background-color: #d45924d4;
-  color: #000000;
   text-align: center;
   position: relative;
-  margin-top: 100px;
-  margin-bottom: 100px;
-  border-top: 1px solid #d45924d4;
-  border-bottom: 1px solid #d45924d4;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  height: 80vh;
-  width: 100vw;
+  margin: 250px 0;
+  width: 100%;
+  position: relative;
+  max-height: 100vh;
   align-items: center;
   justify-content: center;
   display: flex;
@@ -258,71 +277,41 @@ nav ul li a.active {
   flex-direction: column;
 }
 
+.divReviews {
+  color: #000000;
+  background-color: #ffffffa6;
+  height: 100vh;
+  width: 90vw;
+}
 
-
-/* section about */
-.about {
-  height: 50vh;
-  width: 100vw;
-  background-color: #d45a24;
-  padding: 50px; 
+.cntReviews h2 {
+  font-size: 38px;
+  font-weight: 800;
+  margin-top: 40px;
+  margin-bottom: 5vh;
+  color: #000000;
+  text-align: center;
   justify-content: center;
-  align-items: center;
-}
-
-.about .cntAbout {
-  display: block;
-  color: #ffffff;
-  float: center;
-  margin: 0 3vw 50px;
-  align-items: center;
-  justify-content: center;
-}
-
-
-.about .alperen, .about .sam {
-  align-items: center;
-  justify-content: center;
-  margin: 20px 30px;
-  display: flex;
-  height: 20vh;
-  width: auto;
-}
-
-.about .alperen .phtAbout img{
-  height: 11vh;
-}
-
-.phtAbout {
-  flex: 0 0 40%; /* Adjust width of photo container */
-}
-
-.phtAbout img {
-  border-radius: 50%; /* Make the photo appear as a circle */
-  overflow: hidden; /* Hide any content outside the circle */
-  float: left;
-  width: 5vw;
+  width: 90vw;
   height: 10vh;
-  height: auto;
-  margin-right: 20px;
+  align-items: center;
 }
 
-.txtAbout {
-  flex: 1;
-  padding-left: 20px; /* Add spacing between photo and text */
+.review-text {
+  font-size: 18px;
+  color:#000000; 
+  margin-bottom: 30px;
+  text-align: center;
+  display: inline-grid;
+  justify-content: center;
+  width: 25vw;
+  margin: 0 20px;
+  height: 10vh;
+  align-items: center;
 }
 
-.txtAbout h2 {
-  font-size: 24px;
-  margin-bottom: 10px;
-  color: #ffbf00;
-}
 
-.txtAbout p {
-  font-size: 16px;
-  color: #d4d4d4;
-  font-style: oblique;
-}
+
 
 .footer{
   background:#000;
@@ -362,6 +351,46 @@ nav ul li a.active {
   font-size:2em;
   margin:0% 1%;
   }
+
+
+  /* Media Queries */
+
+@media screen and (max-width: 1300px) {
+  
+.features {
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  padding: 10px 0;
+  height: auto;
+  padding: 10px 0; /* Adjusted padding for smaller screens */
+}
+
+.features h2 {
+  margin-top: 40px;
+  font-size: 24px;
+  font-weight: 800;
+}
+
+.features h3 {
+  margin-top: 10px;
+  font-size: 18px;
+  width: 80%;
+}
+
+.feature {
+  flex: 1 0 calc(50% - 20px); /* Adjusted flex properties for smaller screens */
+  margin: 15px 10px 15px 0;
+  width: 80vw;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+.feature h4 {
+  font-size: 16px;
+}
+}
 
 @media (max-width: 800px){
 
@@ -411,41 +440,44 @@ nav ul li a {
   font-size: 13px;
 }
 
-.about {
-  height: 70vh;
-}
-
-
-.about .alperen, .about .sam {
-  display: block;
-  width: 100%;
-  margin-left: -10px;
-}
-
-.about .sam {
-  margin-top: 20px;
-  margin-left: -5px;
-}
-
-.phtAbout img {
-  border-radius: 50%; /* Make the photo appear as a circle */
-  width: 15vw;
-  height: 10vh;
+.cnt2 {
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
   height: auto;
-  margin-right: 20px;
+  padding: 10px 0; /* Adjusted padding for smaller screens */
 }
 
-.txtAbout {
-  margin-bottom: 10px
+
+.cntReviews{
+  margin: 250px 0;
 }
 
-.txtAbout h2 {
-  font-size: 18px;
+.cntReviews .divReviews {
+  height: 100%;
 }
 
-.txtAbout p {
-  font-size: 14px;
+.cntReviews .divReviews h2 {
+  font-size: 24px;
+  margin-top: 40px;
+  margin-bottom: -40px;
 }
+
+.cntReviews .review-text {
+  display: inline;
+  flex-direction: column;
+  text-align: center;
+}
+
+.cntReviews .review-text h3 {
+  font-size: 16px;
+}
+  
+.cntReviews .review-text p {
+  font-size: 13px;
+  width: 90vw;
+}
+
 
 .footer{
   text-align:left;

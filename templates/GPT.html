@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ReceptGPT</title>
-    <link rel="stylesheet" href="GPT.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/GPT.css') }}">
   
     <script src="https://kit.fontawesome.com/2c811ac865.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -17,14 +17,14 @@
     <header>
     <nav>
         <div class="logo">
-            <img src="logoChef.png" alt="ReceptGPT Logo">
+            <img src="{{ url_for('static', filename='images/logoChef.png') }}" alt="ReceptGPT Logo">
             <h1>ReceptGPT</h1>
         </div>
         <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="Recipes.html"> Recipes </a></li>
-          <li><a class="active" href="GPT.html">GPT</a></li>
-          <li><a href="about.html">About</a></li>
+            <li><a href="{{ url_for('index') }}">Home</a></li>
+            <li><a href="{{ url_for('recipes') }}">Recipes</a></li>
+            <li><a class="active" href="{{ url_for('gpt') }}"> GPT</a></li>
+            <li><a href="{{ url_for('about') }}">About</a></li>
         </ul>
     </nav>
 
@@ -44,20 +44,6 @@
     </div>
 
    </header>
-   <!-- 
-    <nav> 
-        <label class="logo"> ReceptGPT </label>
-        <div class="logo-image">  </div>
-        <div class="topnav">
-          <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="Recipes.html"> Recipes </a></li>
-            <li><a class="active" href="GPT.html">GPT</a></li>
-            <li><a href="#about">About</a></li>
-          </ul>
-        </div>
-    </nav>
-    -->
 
     <div class="background-image"> 
         <div id="results"></div>
@@ -67,19 +53,19 @@
     <footer>
         <div id="footer" class="footer">
         <div class="row">
-        <a href="https://www.facebook.com/" target="_blank"><i class="fa fa-facebook"></i></a>
-        <a href="https://www.instagram.com/" target="_blank"><i class="fa fa-instagram"></i></a>
-        <a href="https://www.youtube.com/" target="_blank"><i class="fa fa-youtube"></i></a>
-        <a href="https://twitter.com/" target="_blank"><i class="fa fa-twitter"></i></a>
+           <a href="https://www.facebook.com/" target="_blank"><i class="fa fa-facebook"></i></a>
+           <a href="https://www.instagram.com/" target="_blank"><i class="fa fa-instagram"></i></a>
+           <a href="https://www.youtube.com/" target="_blank"><i class="fa fa-youtube"></i></a>
+           <a href="https://twitter.com/" target="_blank"><i class="fa fa-twitter"></i></a>
         </div>
         
         <div class="row">
-        <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="Recipes.html">Recipes.html</a></li>
-        <li><a href="GPT.html"> GPT</a></li>
-        <li><a href="about.html">Contact us</a></li>
-        </ul>
+            <ul>
+                <li><a href="{{ url_for('index') }}">Home</a></li>
+                <li><a href="{{ url_for('recipes') }}"> Recipes </a></li>
+                <li><a href="{{ url_for('gpt') }}">GPT</a></li>
+                <li><a href="{{ url_for('about') }}">About</a></li>
+           </ul>
         </div>
         
         <div class="row">
@@ -89,13 +75,8 @@
         </footer>
 
     
-<!-- 
-    <footer>
-      <p>&copy; 2024 ReceptGPT. All rights reserved.</p>
-   </footer>
-   -->
-    <script src="GPT.js"></script>
-    <script src="navBar.js"></script>
+
+   <script src="{{ url_for('static', filename='js/GPT.js') }}"></script>
 
 </body>
 </html>

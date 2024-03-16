@@ -108,208 +108,79 @@
     background-color: #d45a24;
   }
     
-  /* Main Section Styles */
-  .cnt1 {
-    background-color: #d45a24;
-    display: flex;
-    align-items: center;
-  }
-  .phtAI {
-    flex: 0 0 60%; /* Adjust width of photo container */
-    height: 100%;
-  }
-  
-  .phtAI img {
-    width: 100%;
-    height: 90vh;
-    margin-bottom: -7.8px;
-    padding-inline: 0px 10px;
-    padding-bottom: auto;
-  }
-  
-  .txtPhtAI {
-    flex: 1;
-    padding-left: 40px; /* Add spacing between photo and text */
-    padding-right: 20px;
-  }
-  
-  .txtPhtAI h2 {
-    font-size: 24px;
-    margin-bottom: 15px;
-    color: #fff7f7;
-  }
-  
-  .txtPhtAI p {
-    font-size: 18px;
-    color: #d4d4d4;
-  }
-  
-  
-  .cnt2 {
-    background-color: #ff5500;
-    display: flex;
-    align-items: center;
-  }
-  
-  .cnt2 .phtAI {
-    flex: 0 0 40%; /* Adjust width of photo container */
-  }
-  
-  .cnt2 .phtAI img {
-    width: 100%;
-    height: 85vh;
-    padding-inline: 0px 10px;
-    padding-bottom: auto;
-  }
-  
-  .cnt2 .txtPhtAI {
-    flex: 1;
-    padding-left: 40px; /* Add spacing between photo and text */
-    padding-right: 20px;
-  }
-  
-  .cnt2 .txtPhtAI h2 {
-    font-size: 24px;
-    margin-bottom: 15px;
-    color: #fff7f7;
-  }
-  
-  .cnt2 .txtPhtAI p {
-    font-size: 18px;
-    color: #d4d4d4;
-  }
-  
-  
-  .features {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    height: auto;
-    margin-top: 20px;
-    margin-top: auto;
-    margin-bottom: 100px;
-    padding-top: 100px;
-  }
-  
-  .features h2 {
-    float: center;
-    font-size: 38px;
-    text-align: center;
-    justify-content: center;
-    width: 100vw;
-    margin: 40px 0;
-  }
-  .feature {
-    background-color: #ec5211d5;
-      flex: 0 0 30%;
-    text-align: center;
-    margin: 20px;
-    padding: 20px;
-    border-radius: 5px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  }
-  
-  .feature img {
-    width: 80px;
-    height: auto;
-    margin-bottom: 20px;
-  }
-  
-  .feature h3 {
-    color: #fff;
-    font-weight: bold;
-    font-size: 22px;
-    margin-bottom: 10px;
-  }
-  
-  .feature p {
-    color: #e3e3e3;
-    font-size: 16px;
-  }
-  
-  .about {
-    min-height: 50vh;
-    width: 100vw;
-    background-color: #d45a24;
-    padding: 50px; 
-    justify-content: center;
-    align-items: center;
-  }
-  
-  .about .cntAbout {
-    display: block;
-    color: #ffffff;
-    float: center;
-    margin: 0 3vw 50px;
-    align-items: center;
-    justify-content: center;
-  }
-  
-  
-  .about .alperen, .about .sam {
-    align-items: center;
-    justify-content: center;
-    margin: 20px 30px;
-    display: flex;
-    height: 20vh;
-    width: auto;
-  }
-  
-  .about .alperen .phtAbout img{
-    height: 12vh;
-  }
-  
-  .phtAbout {
-    flex: 0 0 40%; /* Adjust width of photo container */
-  }
-  
-  .phtAbout img {
-    border-radius: 50%; /* Make the photo appear as a circle */
-    overflow: hidden; /* Hide any content outside the circle */
-    float: left;
-    width: 5vw;
-    height: 10vh;
-    height: auto;
-    margin-right: 20px;
-  }
-  
-  .txtAbout {
-    flex: 1;
-    padding-left: 20px; /* Add spacing between photo and text */
-  }
-  
-  .txtAbout h2 {
-    font-size: 24px;
-    margin-bottom: 10px;
-    color: #ffbf00;
-  }
-  
-  .txtAbout p {
-    font-size: 16px;
-    color: #d4d4d4;
-    font-style: oblique;
-  }
 
 
-
-
-  main {
-    background: linear-gradient(to top, rgba(0, 0, 0, 0.5)50%, rgba(0, 0, 0, 0.5)50%), url('KitchenWhite.avif');
-    background-position: top center;
-    background-size: cover;
-    background-repeat: no-repeat;
-    min-height: 100vh;
-    justify-content: center;
-    align-items: center;
+main {
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.5)50%, rgba(0, 0, 0, 0.5)50%), url("../images/KitchenWhite.avif");
+  background-position: top center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed; 
+  min-height: 100vh;
+  justify-content: center;
+  align-items: center;
 }
+
+
+
+/* Style for the mainGoals section */
+.mainGoals {
+  background-color: #f9f9f9;
+  padding: 50px 0;
+}
+
+/* Style for the goals-content container */
+.goals-content {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+/* Style for the goals-content h2 */
+.goals-content h2 {
+  color: #333;
+  font-size: 36px;
+  margin-bottom: 30px;
+}
+
+/* Style for the goals-content p */
+.goals-content p {
+  color: #666;
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+/* Style for the goals-content ul */
+.goals-content ul {
+  list-style-type: none;
+  padding: 0;
+  margin-top: 20px;
+}
+
+/* Style for the goals-content li */
+.goals-content li {
+  color: #666;
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+/* Style for the goals-content ul:before */
+.goals-content ul:before {
+  content: '\2022';
+  color: #666;
+  font-size: 20px;
+  margin-right: 10px;
+}
+
+
+
 
 .mainAbout {
     color: #ffffff;
     min-height: 100%;
     max-width: 100vw;
     margin-inline: auto;
-    padding-top: 25vh;
+    padding: 25vh 0;
 }
 
 .about-content {
@@ -336,21 +207,135 @@
 }
 
 
-#reviews {
+/* review css */
+
+/*
+.cntReviews{
+  background: none;
+  background-image: none;
+}
+
+.cntReviews H2{
+  position: relative;
+  text-align: center;
+  align-items: center;
+}
+
+.cntReviews #reviews {
   margin-top: 20px;
 }
 
 .review {
-  border-bottom: 1px solid #ccc;
-  padding: 10px 0;
+  background-color: #3f3f3f86;
+  padding: 5%;
+  max-width: 65vw;
+  margin: 0 auto;
+  text-align: center;
+  border-radius: 15px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin-top: 20px;
+  margin-bottom: 20px;
 }
 
-.review p {
+*/ 
+
+/* Style for the reviews container */
+.cntReviews {
+  background: none;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.9);
+  margin-bottom: 20px;
+}
+
+.divReviews{
+ /* display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center; */
+  margin-bottom: 40px;
+  margin-top: 40px;
+  background-color: #3f3f3fc7;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Style for the reviews header */
+.cntReviews h2, .cntReviews h3 {
+  margin: 10px 0;
+  font-size: 32px;
+  color: #ffffff;
+}
+
+/* Style for each individual review */
+.review {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  margin-bottom: 20px;
+  background-color: #fff;
+  height: auto;
+  overflow: hidden;
+}
+
+/* Style for the user name */
+.review p.userName {
+  margin: 0;
+  font-weight: bold;
+  color: #333;
+}
+
+/* Style for the star rating */
+.review p.starRating {
   margin: 5px 0;
+  color: #FFD700; /* Gold color for stars */
+}
+
+/* Style for the review text */
+.review .reviewText {
+  margin: 10px 0;
+  color: #ff0000;
+}
+
+/* Style for the form */
+#reviewForm {
+  margin-top: 20px;
+}
+
+/* Style for form inputs */
+#userName,
+#stars,
+#reviewText {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+#reviewText {
+  resize: none;
+  overflow: auto;
 }
 
 
+/* Style for the submit button */
+#reviewSubmit {
+  background-color: #4CAF50;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
 
+#reviewSubmit:hover {
+  background-color: #45a049;
+}
 
 
 .footer{
@@ -395,11 +380,8 @@
 
 
 
-
   
-
-  
-  @media (max-width: 700px){
+  @media (max-width: 900px){
   
     .logo {
       margin: 2px 10px;
@@ -463,42 +445,36 @@
   margin-bottom: 15px;
 }
 
+.goals-content {
+  padding: 0 20px;
+}
+.goals-content h2 {
+  font-size: 28px;
+}
+.goals-content p {
+  font-size: 16px;
+}
+  
+.cntReviews{
+  padding: 10px;
+}
 
-  
-  .about {
-    height: 70vh;
-  }
+.cntReviews h2{
+  font-size: 24px;
+  margin-bottom: 10px;
+}
 
-  .about .alperen, .about .sam {
-    display: block;
-    width: 100%;
-    margin-left: -10px;
-  }
-  
-  .about .sam {
-    margin-top: 20px;
-    margin-left: -5px;
-  }
-  
-  .phtAbout img {
-    border-radius: 50%; /* Make the photo appear as a circle */
-    width: 15vw;
-    height: 10vh;
-    height: auto;
-    margin-right: 20px;
-  }
-  
-  .txtAbout {
-    margin-bottom: 10px
-  }
-  
-  .txtAbout h2 {
-    font-size: 18px;
-  }
-  
-.txtAbout p {
-    font-size: 14px;
- }
+.cntReviews h3{
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.review {
+  padding: 10px;
+  margin-bottom: 10px;
+  height: auto;
+  overflow: hidden;
+}
   
 .footer{
     text-align:left;

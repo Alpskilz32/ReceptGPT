@@ -79,12 +79,18 @@ function displayMoreRecipes(moreRecipes) {
         <ul>
         ${recipe.recipe.ingredientLines.map(ingredient => `<li>${ingredient}</li>`).join('')}
         </ul>
-        <span className: 'px-2 py-1 text-[12px] capatalize bg-[#0c452243] shadow
-        -X1 rounded full mr-3 text-green-500'> Servings: ${recipe.recipe.yield} </span>
-        <span> Calories: ${recipe.recipe.calories} </span>
-        <span className: 'px-2 py-1 text-[12px] capatalize bg-[#0c452243] shadow-
-        X1 rounded full mr-3 text-green-500'> Meal Type: ${recipe.recipe.mealType} </span>
-        <span> Minutes: ${recipe.recipe.totalTime}  </span>
+      <!--  <p>${recipe.recipe.summary}</p>
+        <p>${recipe.recipe.instructions}</p> -->
+
+        <p> 
+         <span className: 'px-2 py-1 text-[12px] capatalize bg-[#0c452243] shadow
+         -X1 rounded full mr-3 text-green-500'> ${recipe.recipe.yield} person(s) </span>
+         <span> ${recipe.recipe.calories} kcal </span>
+         <span className: 'px-2 py-1 text-[12px] capatalize bg-[#0c452243] shadow-
+         X1 rounded full mr-3 text-green-500'> ${recipe.recipe.mealType} </span>
+         <span> ${recipe.recipe.totalTime} minutes </span>
+        </p>
+
         <a href="${recipe.recipe.url}" target="_blank">View Recipe</a>
         </div>`;
         });

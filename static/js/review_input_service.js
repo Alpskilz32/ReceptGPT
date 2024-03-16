@@ -26,7 +26,8 @@ function displayReviews() {
             <p><strong>${review.userName}</strong> - ${'★'.repeat(review.stars)}</p>
             <p>${review.reviewText}</p>
         `;
-        reviewsContainer.insertAdjacentHTML('beforeend', reviewDiv.outerHTML);
+        // Append the review element to the reviews container
+        document.getElementById('reviews').appendChild(reviewDiv);
     });
 }
 
