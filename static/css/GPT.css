@@ -23,59 +23,11 @@ body {
 /* Header Styles */
 header {
   background-color: #fff;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
   padding: 20px 0;
 }
 
-nav {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
 
-
-.logo {
-  color: #f26a2e;
-  display: flex;
-  align-items: center;
-}
-
-
-.logo img {
-  width: 60px;
-  height: auto;
-}
-
-.logo h1 {
-  font-size: 24px;
-  font-weight: bold;
-  margin-left: 10px;
-}
-
-nav ul {
-  display: flex;
-  list-style: none;
-}
-
-nav ul li {
-  margin-right: 20px;
-}
-
-nav ul li a {
-  text-decoration: none;
-  color: #333;
-  font-weight: bold;
-  transition: color 0.3s ease;
-}
-
-nav ul li a:hover {
-  color: #f26a2e;
-}
-
-nav ul li a.active {
-  background-color: white;
-  color:#d45a24;
-}
 
 
 /* Hero Section Styles */
@@ -83,12 +35,80 @@ nav ul li a.active {
   text-align: center;
   margin-top: 60px;
   margin-bottom: 40px;
+  z-index: 10;
+}
+.hero h1 {
+  font-size: 3em;
+}
+.hero h4 {
+  font-size: 3rem;
+  margin-top: -10px;
+  margin-bottom: 20px;
 }
 
 form {
   display: flex;
   flex-wrap: wrap-reverse;
   justify-content: center;
+}
+
+
+.tagline {
+  margin-bottom: 10px;
+  font-weight: bold;
+  font: 1em sans-serif; 
+  text-align: center;
+  position: relative;
+  display: block;
+  z-index: 1;
+}
+
+
+.tgFilter {
+  position: absolute;
+  top: 23svh;
+  left: 33svw;
+  transform: translateX(-50%);
+  z-index: 1; 
+  width: 8%;
+  height: auto;
+}
+.tg-flr {
+  font-size: 0.9rem;
+  text-align: center;
+} 
+.tgFilter img {
+  padding: auto 20px;
+  position: relative;
+  top: -10px;
+  left: 1.2svw;
+}
+
+.tgShuffle{
+  position: absolute;
+  top: 24svh;
+  right: 23svw;
+  transform: translateX(-50%);
+  z-index: 1;
+  width: 8%;
+  height: auto;
+}
+.tg-shf {
+  font-size: 0.8rem;
+}
+.tgShuffle img {
+  padding: auto 20px;
+  position: relative;
+  top: -10px;
+  right: 2.75svw;
+}
+
+.tags-input {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: 20px;
+  height: auto;
 }
 
 .tags-input ul { 
@@ -166,6 +186,7 @@ button[type="submit"]:hover {
   background-color: #9b4101;
 }
 
+
 #results {
   display: grid;
   gap: 40px;
@@ -239,23 +260,46 @@ button[type="submit"]:hover {
   line-height: 20px;
 }
 
-#results span {
+#results .recipe-footer {
   display: flex;
   flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  margin: 10px 0;  
+}
+
+#results .recipe-footer span {
   justify-content: center;
   align-items: center;
-  position: relative;
-  color: #ffffff;
-  border-radius: 6px;
-  background-color: #b05002;
+  color: #000000;
+  border-radius: 12px;
+  background-color: #ebd705;
+  box-shadow: 0px 10px 10px rgba(183, 135, 1, 0.9);
   padding: 10px;
   font-size: 14px;
-  margin-bottom: 15px;
-  text-align: start;
-  text-justify: distribute;
-  line-height: 20px;
-  max-width: 170px;
+  text-align: center;
+  min-width: 150px;
+  min-height: 20px;
+  margin: 10px;
 }
+
+/*
+#results span{
+  justify-content: center;
+  align-items: center;
+  color: #ffffff; 
+  background-color: #b05002;  
+  border-radius: 6px;
+  font-size: 0.8rem;
+  text-align: center; 
+  min-width: 150px;
+  min-height: fit-content;
+  height: auto;  
+  padding: 20px;
+  line-height: 2;
+  margin: 10px;
+} */
+
 
 #results.btn {
   background-color: #ff7700;
@@ -285,27 +329,25 @@ button[type="submit"]:hover {
   background: #b05002e1;
 }
 
-.hero .btnShuffle {
-  background-color: white;
-  display: table-row;
-  position: relative;
+.hero .searchButton {
+  background-color: white; 
   border: none;
   margin-left: 5px;
-}
-
-.hero #shuffle {
-  display: block;
+  display: inline-flex;
+  flex-wrap: wrap;
   background-color: #ff6200;
   color: white;
   border: none;
   border-radius: 8px;
   cursor: pointer;
-  font-size: 16px;
-  padding: 13px 15px;
+  font-size: 1rem;
+  padding: 14px 15px;
   transition: background-color 0.2s;
+  z-index: 1;
+  margin: 18% 10px;
 }
 
-.hero #shuffle:hover {
+.hero .searchButton:hover {
   background: #9b4101;
 }
 
@@ -316,6 +358,317 @@ button[type="submit"]:hover {
 .hero #shuffle:after {
   background: #9b4101;
 }
+
+/* 
+.btnFilter{
+  margin: 0 5px 0 0;
+}
+
+
+/* The Modal (background) /
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgb(0,0,0);
+  background-color: rgba(0,0,0,0.4);
+}
+
+/* Modal Content/Box *
+.modal-content {
+  background-color: #fefefe;
+  margin: 15% auto;
+  padding: 20px;
+  width: 80%;
+  max-width: 45vw;
+  height: auto;
+  border: 1px solid #888;
+}
+
+
+.modal #filterForm .filterLabel{
+  margin: 10px;
+}
+
+.modal #filterForm button {
+  font-size: 0.7rem;
+  background-color: #ff6200;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 5px; 
+  margin-top: 10px;
+}
+
+/* The Close Button /
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 2em;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+} */
+
+
+/* Modal Container */
+#filterModal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+/* Modal Content */
+.modal-content {
+  background-color: #ff7300;
+  margin: 15% auto; /* 15% from the top and centered */
+  padding: 20px;
+  border: 2px solid #888;
+  width: 80%; /* Could be more or less, depending on screen size */
+  color: white;
+}
+
+.modal-content h2 {
+  font-size: 2em;
+}
+
+/* Close Button */
+.close {
+  color: #ffffff;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* Filter Categories */
+.filterCategorie {
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+  display: block;
+  align-items: center; 
+  background-color: #fa7c0ef4;
+}
+
+/* Each Category Starts on New Line */
+.filterCategorie h3 {
+  margin-top: 0;
+  font-size: 1.4em;
+  border-radius: 10px;
+  padding: 5px;
+}
+
+.ftc1 {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  width: 50%;
+} 
+.healthlabels {
+  /* 2columns */ 
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  width: 50%;
+}
+.healthlabels .filterLabel {
+  width: auto; /* Allow labels to take full width of the column */
+  box-sizing: border-box; 
+}
+.dietlabels {
+  width: 50%;
+  /* margin-right: -30px; */
+}
+
+/* Arrange in 3 Columns */
+.ftc1 .filterLabel {
+  display: block;
+  width: 40%; 
+  margin-bottom: 10px;
+  padding: 2vh 30px;
+  float: left;
+}
+
+
+.ftc2{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 100%;
+  padding: 5%;
+  height: auto;
+}
+
+/* Arrange in 3 Columns */
+.ftc2 .filterLabel {
+  margin: auto 20px;
+  height: 90%;
+  width: auto;
+  padding: 5px 10px;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+}
+
+.filterLabel {
+   background-color: #fe8b1789;
+   border-radius: 10px;
+  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.2);
+}
+
+/* Clear floats after every 3 checkboxes */
+.ftc1:nth-child(3n+1) {
+  clear: left;
+}
+
+.meaLTypes {
+  display: flex;
+  flex-wrap: wrap;
+  /* 1 column */
+  flex-direction: row;
+  justify-content: center;
+}
+
+/* Submit Button */
+.filterSubmitBtn {
+  display: block;
+  margin: 20px auto;
+  padding: 10px 20px;
+  color: white;
+  border: none;
+  cursor: pointer;
+  float: right; /* Align to the right */
+  border: 2px solid black;
+  box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.filterSubmitBtn:hover {
+  background-color: #45a049;
+}
+/* Responsive adjustments */
+@media only screen and (max-width: 768px) {
+  /* Health Labels */
+  .healthlabels.filterCategorie .filterLabel {
+    width: 100%; /* One column for smaller screens */
+  }
+
+  /* Diet Labels */
+  .dietlabels.filterCategorie .filterLabel {
+    width: 100%; /* One column for smaller screens */
+  }
+
+  /* Meal Types */
+  .mealTypes.filterCategorie .filterLabel {
+    width: 80%; /* One column for smaller screens */
+    max-height: 40px ;
+    margin: 10px 0;
+    flex-direction: column;
+  }
+}
+/* Additional adjustments for phones (max-width: 450px) */
+@media only screen and (max-width: 450px) {
+  .modal {
+    margin-top: 50px;
+  }
+  .filterLabel {
+    font-size: 0.8em; /* Smaller font size for phones */
+    padding: 0px; /* Reduced padding for better fit on small screens */
+    gap: 10px;
+  }
+  .ftc2 {
+    height: 120%;
+  }
+  .dietlabels {
+    flex-direction: column;
+    width: 100%;
+  }
+  .healthlabels {
+    width: 100%;
+  }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+.recipe-container {
+  position: relative;
+  display: inline-block;
+  height: auto;
+}
+
+.healthLabels {
+  /*  background-color: #b05002cf; */
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%; /* Cover the entire width of the image */
+  min-height: 100%; max-height: 90%; /* Cover the entire height of the image */
+  background-color: rgba(255, 255, 255, 0.8);
+  display: none;
+  overflow-y: auto; /* Display scrollbar on y-axis only */
+  overflow-x: hidden; /* Hide scrollbar on x-axis */  
+  text-align: center;  
+  font-size: 1.2rem;  
+  padding: 20px;
+}
+
+
+.recipe-container:hover .healthLabels {
+  display: block;
+}
+
+
+/* Error message styles */
+.section-results .error-message {
+  display: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  box-shadow: 0px 12px 12px rgba(29, 29, 29, 0.452) ;
+  color: #ff7300;
+  background-color: #333;
+  border: #000;
+  border-radius: 15px;
+  font-size: 1rem;
+  margin: 0 auto;
+  margin-top: 10px;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+}
+
+
 
 footer{
   background:#000;
@@ -362,30 +715,142 @@ footer{
   }
 
 
+@media (max-width: 1400px) {
+
+  .tgFilter {
+    top: 23svh;
+    left: 30svw;
+  }
+    
+  .tgShuffle{
+    top: 23svh;
+    right: 20svw;
+  }
+}
+
+@media (max-width: 1200px) {
+
+.tgFilter {
+  top: 23svh;
+  left: 25svw;
+}
+
+.tgShuffle{
+  top: 23svh;
+  right: 15svw;
+}
+}
+
+@media (max-width: 900px) {
+  .tgFilter {
+    top: 23svh;
+    left: 18svw;
+    width: 10%;
+  }
+  
+  .tgShuffle{
+    top: 22svh;
+    right: 8svw;
+    width: 10%;
+  }
+}
+
 @media (max-width: 700px){
-
-  .logo {
-    margin: 2px 10px;
-}
-
-nav .logo-image {
-    width: 20%;
-    margin: 0;
-}
-
-nav {
-width: 100%;
-}
-nav ul li {
-  margin-right: 20px;
-}
-
-nav ul li a { 
-  margin: 0;
-  font-size: smaller;
-}
-
 #results {
   margin-left: 10px;
 }
+
+/*#results {
+  display: grid;
+  gap: 30px;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}*/
+
+/*
+#results #results .recipe-footer {
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  justify-content: space-evenly;
+} */
+
+
+
+.textTag {
+display: none;
+}
+
+
+.footer{
+  text-align:left;
+  padding:5%;
+  width: 90%;
+  }
+  .footer .row {
+    margin-left: 10px;
+    width: 90%;
+  }
+  .footer .row ul li{
+  display:block;
+  margin: 10px 10px 10px 0;
+  text-align:left;
+  }
+  .footer .row a i{
+  margin: 0% 5%;
+  }
+
+}
+
+@media (max-width: 450px) {
+
+  .hero .search-container{
+    width: 100%;
+  }
+  .hero .searchButtons-container  {
+    align-items: center;
+    z-index: 1;
+    position: relative;
+    top: 0px;
+    left: 5%;
+    margin-bottom: 20px;
+  }
+  .hero .searchButtons-container .btnFilter  {
+    position: absolute;
+    top: 65px;
+    left: 15vw;
+  }
+  .hero .searchButtons-container .btnShuffle {
+    position: absolute;
+    top: 65px;
+    right: 25svw;
+  }
+}
+
+@media (max-width: 380px) {
+  .hero .searchButtons-container .btnFilter  {
+    position: absolute;
+    top: 65px;
+    left: 18vw;
+  }
+  .hero .searchButtons-container .btnShuffle {
+    position: absolute;
+    top: 65px;
+    right: 28svw;
+  }
+}
+
+@media (max-width: 325px) {
+  .hero .search-container{
+    margin-top: -10px;
+  }
+  .hero .searchButtons-container .btnFilter  {
+    position: absolute;
+    top: 55px;
+    left: 23svw;
+  }
+  .hero .searchButtons-container .btnShuffle {
+    position: absolute;
+    top: 55px;
+    right: 31svw;
+  }
 }

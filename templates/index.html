@@ -7,26 +7,38 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Play&display=swap" rel="stylesheet"> 
+    <!-- link to menu-icon font -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <!-- css links -->
     <link rel="stylesheet" href="{{ url_for('static', filename='css/team.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/index.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/navbar.css') }}">
+
 </head>
 <body>
     <header>
-        <nav>
+        <nav class="navbar">
             <div class="logo">
                 <img src="{{ url_for('static', filename='images/logoChef.png') }}" alt="ReceptGPT Logo">
-                <h1>ReceptGPT</h1>
-            </div>
-            <ul>
-              <li><a class="active" href="{{ url_for('index') }}">Home</a></li>
-              <li><a href="{{ url_for('recipes') }}"> Recipes </a></li>
-              <li><a href="{{ url_for('gpt') }}">GPT</a></li>
-              <li><a href="{{ url_for('about') }}">About</a></li>
-            </ul>
+                <a href="{{ url_for('index') }}">ReceptGPT</a>
+            </div> 
+            <input type="checkbox" id="check-menu">
+            <label for="check-menu" class="icons"> 
+              <i class='bx bx-menu' id="menu-icon"></i>
+              <i class='bx bx-x' id="closed-icon"></i>
+            </label>
+            <div class="nav-menu"> 
+              <ul>
+                <li><a class="active" href="{{ url_for('index') }}">Home</a></li>
+                <li><a href="{{ url_for('recipes') }}"> Recipes </a></li>
+                <li><a href="{{ url_for('gpt') }}">GPT</a></li>
+                <li><a href="{{ url_for('about') }}">About</a></li>
+              </ul>
+           </div>
         </nav>
 
         <div class="hero">
-          <h1>Welcome to ReceptGPT</h1>
+          <h1>Welcome to <span>ReceptGPT</span> </h1>
           <p>Explore a world of delicious recipes with AI assistance.</p>
           <a href="{{ url_for('gpt') }}" class="btn">Get Started</a>
         </div>
@@ -34,14 +46,16 @@
 
 <main>
   <section class="containers">
-    <div class="cnt1">
+    <div class="cnt n1">
       <div class="phtAI">
           <img src="{{ url_for('static', filename='images/AI1.jpeg') }}" alt="Photo of a kitchen">
       </div>
        <div class="txtPhtAI">
+        <div class="textAI">
           <h2>What is ReceptGPT? </h2>
           <p>ReceptGPT employs advanced algorithms and machine learning to search through a comprehensive database of recipes and provide users with relevant and useful information. Whether you're looking for a quick and easy dish for a weeknight dinner or an impressive recipe for a special occasion, ReceptGPT has you covered. </p>
-       </div>
+        </div>
+      </div>
     </div>
    </section>
 
@@ -68,9 +82,8 @@
   </section>
 
   <sections class="containers">
-  <div class="cnt2">
+  <div class="cnt twisted">
     <div class="txtPhtAI">
-      <span class="text-primary font-semibold">Dashboard</span>
       <h2>Why choose ReceptGPT?</h2>
       <p>With ReceptGPT, you'll save time and effort when searching for recipes and planning meals. Whether you're a novice cook or a seasoned chef, ReceptGPT offers the tools and inspiration you need to create creative and flavorful dishes. </p>
     </div>
@@ -82,39 +95,38 @@
 
  </sections>
 
+
+<!-- reviews on homepage -->
 <section class="cntReviews">
-  <div class="divReviews">
-    <h2>What Our Users Say</h2>
-    <div class="review">
-      <div class="review-text">
-        <h3> User1 -  <span>Web Designer</span> </h3>  
-        <p>ReceptGPT offers a fantastic platform for individuals passionate about cooking and discovering new recipes. The layout is 
-          visually appealing, with vibrant colors and clear sections highlighting the features offered. I particularly appreciate the 
-          Randomizer feature, which adds an element of excitement by suggesting random recipes for users feeling indecisive. The 
-          step-by-step cooking instructions provided for each recipe are detailed and easy to follow, catering to both novice and 
-          experienced cooks. Overall, ReceptGPT is a must-visit for anyone looking to elevate their culinary skills and explore a world
-          of delicious dishes.</p>
-      </div>
-      <div class="review-text">
-        <h3> User2 -  <span>Web Designer</span> </h3>  
-        <p>ReceptGPT impresses with its user-friendly interface and AI-powered features aimed at simplifying the cooking experience. The 
-          website's responsiveness ensures seamless navigation across various devices, from desktops to smartphones. The personalized recipe 
-          suggestions based on individual preferences offer a tailored experience, while the Randomizer feature adds an element of surprise 
-          and encourages culinary exploration. The inclusion of clear and concise cooking instructions enhances usability, making it easy for 
-          users to replicate dishes with confidence. ReceptGPT is a valuable resource for both amateur cooks seeking inspiration and seasoned 
-          chefs looking to expand their repertoire. </p>
-      </div>
-      <div class="review-text">
-        <h3> User3 -  <span>Web Designer</span> </h3>  
-        <p>ReceptGPT stands out as a comprehensive platform designed to enhance the culinary journey of its users. The website's sleek design
-           and intuitive layout make it a pleasure to explore, with each feature seamlessly integrated for a cohesive experience. Whether you're
-           in search of personalized recipe suggestions or simply looking to try something new with the Randomizer feature, ReceptGPT offers 
-           something for every palate. The inclusion of detailed cooking instructions ensures that users can recreate dishes with ease, fostering
-           confidence in the kitchen. With its wealth of resources and user-friendly interface, ReceptGPT is sure to become a go-to destination 
-           for food enthusiasts everywhere.</p>
-      </div>
-  </div>
-</section>
+  <div class="testimonial-grid">
+    <div class="testimonial bg-primary-400">
+      <p>"ReceptGPT is user-friendly, packed with delicious recipes, and offers great search options."</p>
+      <p class="name">Tom</p>
+      <p class="position">customer</p>
+    </div>
+    <div class="testimonial bg-secondary-400">
+      <p>"It works well, also a perfect filter with a lot of options."</p>
+      <p class="name">Seyf</p>
+      <p class="position">customer</p>
+    </div>
+    <div class="testimonial bg-secondary-500">
+      <p>"Wow, excellent recipes."</p>
+      <p class="name">Abdullah</p>
+      <p class="position">customer</p>
+    </div>
+    <div class="testimonial bg-primary-400">
+      <p>"My tummy is filled now, lots of easy and quick recipes. Perfect for Ramadan."</p>
+      <p class="name">Shaher</p>
+      <p class="position">customer</p>
+    </div>
+    <div class="testimonial bg-secondary-400">
+      <p>"A very good app, but I would prefer an option to mention my allergies."</p>
+      <p class="name">Belal</p>
+      <p class="position">customer</p>
+    </div>
+</div>
+</section>  
+
  
 
 
@@ -169,7 +181,6 @@
   </div>
   </div>
   </footer>
-
 
 
 </body>

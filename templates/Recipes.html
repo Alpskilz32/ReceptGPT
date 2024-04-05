@@ -6,6 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ReceptGPT</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/GPT.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/navbar.css') }}">
+        <!-- link to menu-icon font -->
+        <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 
     <script src="https://kit.fontawesome.com/2c811ac865.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -15,38 +18,42 @@
 </head>
 <body>
   <header>
-    <nav>
+    <nav class="navbar">
       <div class="logo">
         <img src="{{ url_for('static', filename='images/logoChef.png') }}" alt="ReceptGPT Logo">
-        <h1>ReceptGPT</h1>
+        <a href="{{ url_for('index') }}">ReceptGPT</a>
     </div>
-    <ul>
+    <input type="checkbox" id="check-menu">
+    <label for="check-menu" class="icons"> 
+      <i class='bx bx-menu' id="menu-icon"></i>
+      <i class='bx bx-x' id="closed-icon"></i>
+    </label>
+    <div class="nav-menu"> 
+      <ul>
         <li><a href="{{ url_for('index') }}">Home</a></li>
         <li><a href="{{ url_for('recipes') }}" class="active">Recipes</a></li>
         <li><a href="{{ url_for('gpt') }}">GPT</a></li>
         <li><a href="{{ url_for('about') }}">About</a></li>
-    </ul>
+      </ul>
+    </div>
     </nav>
    </header>
+   <main>
     
-    <div class="background-image"> 
-     <div class="hero">
-      <h1>All Recipes</h1>
-      <button type="sumbit" onclick="loadLessRecipes()">
+    <section class="background-image"> 
+      <div class="hero">
+        <h1>All Recipes</h1>
+        <!-- <button type="sumbit" onclick="loadLessRecipes()">
         <i id="shuffle" class="fa-solid fa-shuffle" aria-hidden="true"></i>
-      </button>
-      <div id="results"></div> 
-     </div>
-    </div>
+        </button> -->
+        <div id="results"></div> 
+      </div>
+    </section>
 
-    <button id="load-more"> show more </button> 
+    <button id="load-more"> load more </button> 
 
-<!-- 
-    <footer>
-      <p>&copy; 2024 ReceptGPT. All rights reserved.</p>
-   </footer>
-   -->
-
+    </section>
+   </main>
    <footer>
     <div id="footer" class="footer">
     <div class="row">

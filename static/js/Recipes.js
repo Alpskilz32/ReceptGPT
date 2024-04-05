@@ -44,6 +44,8 @@ async function searchRecipes() {
 function displayRecipes(recipes) {
     let html ='';
     recipes.forEach((recipe) => {
+        const dietLabels = recipe.recipe.dietLabels.length > 0 ? recipe.recipe.dietLabels.join(' / ') : 'none';
+
         html += `
         <div>
             <img src="${recipe.recipe.image}" alt="${recipe.recipe.label}">
@@ -52,10 +54,16 @@ function displayRecipes(recipes) {
                 ${recipe.recipe.ingredientLines.map(ingredient => `<li>${ingredient}</li>`).join('')}
             </ul>
 
-            <span className: 'px-2 py-1 text-[12px] capatalize bg-[#0c452243] shadow-X1 rounded full mr-3 text-green-500'> Servings: ${recipe.recipe.yield} </span>
-            <span> Calories: ${recipe.recipe.calories} </span>
-            <span className: 'px-2 py-1 text-[12px] capatalize bg-[#0c452243] shadow-X1 rounded full mr-3 text-green-500'> Meal Type: ${recipe.recipe.mealType} </span>
-            <span> Minutes: ${recipe.recipe.totalTime}  </span>
+            <section class="recipe-footer">
+                <span>  ${recipe.recipe.yield} person(s) </span>
+                <span class="kcal"> ${Math.round(recipe.recipe.calories)}  kcal </span> 
+                <span>  ${recipe.recipe.mealType} </span>
+                <span>  ${recipe.recipe.totalTime} minutes </span>
+                <span class="dietLabels">  diet: ${dietLabels} </span>
+            </section>
+            
+            <span class="healthLabels">  ${recipe.recipe.healthLabels.join(' / ')} </span>
+
            
             <a href="${recipe.recipe.url}" target="_blank">View Recipe</a>
         </div> 
@@ -102,15 +110,10 @@ function displayMoreRecipes(moreRecipes) {
         <a href="${recipe.recipe.url}" target="_blank">View Recipe</a>
         </div>`;
         });
-        resultsList.insertAdjacentHTML('beforeend', html);}
+        resultsList.insertAdjacentHTML('beforeend', html);
+}
 
 
 
 
-// define([
-//    'require',
-//    'dependency'
-// ], function(require, factory) {
-//   'use strict';
-// });
 

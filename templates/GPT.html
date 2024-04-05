@@ -6,6 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ReceptGPT</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/GPT.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/navbar.css') }}">
+        <!-- link to menu-icon font -->
+        <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
   
     <script src="https://kit.fontawesome.com/2c811ac865.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -15,41 +18,138 @@
 <body>
 
     <header>
-    <nav>
+    <nav class="navbar">
         <div class="logo">
             <img src="{{ url_for('static', filename='images/logoChef.png') }}" alt="ReceptGPT Logo">
-            <h1>ReceptGPT</h1>
+            <a href="{{ url_for('index') }}">ReceptGPT</a>
         </div>
-        <ul>
-            <li><a href="{{ url_for('index') }}">Home</a></li>
-            <li><a href="{{ url_for('recipes') }}">Recipes</a></li>
-            <li><a class="active" href="{{ url_for('gpt') }}"> GPT</a></li>
-            <li><a href="{{ url_for('about') }}">About</a></li>
-        </ul>
+        <input type="checkbox" id="check-menu">
+        <label for="check-menu" class="icons"> 
+          <i class='bx bx-menu' id="menu-icon"></i>
+          <i class='bx bx-x' id="closed-icon"></i>
+        </label>
+        <div class="nav-menu"> 
+           <ul>
+              <li><a href="{{ url_for('index') }}">Home</a></li>
+              <li><a href="{{ url_for('recipes') }}">Recipes</a></li>
+              <li><a class="active" href="{{ url_for('gpt') }}"> GPT</a></li>
+              <li><a href="{{ url_for('about') }}">About</a></li>
+           </ul>
+        </div>
     </nav>
 
 
-    <div class="hero">
-            <h1>Recipe Finder</h1>
+    <section class="hero">
+        <h1>Recipe Finder</h1>
+        <h4 style="font: 5em; font-size: 1.1rem; "> Type ingredients in English to find recipes</h4>
 
-            <form><div class="tags-input">
-                <ul id="tags"></ul> 
+        
+        <div  class="textTag tgFilter">
+            <h2 class="tagline tg-flr">Filter your search results</h2>
+            <img src="{{ url_for('static', filename='images/arrow2.png') }}" alt="an arrow that points the shuffle button">
+        </div>
+        <div class="textTag tgShuffle"> 
+            <h3 class="tagline tg-shf">Click here if you can't make a choice</h3>
+            <img src="{{ url_for('static', filename='images/arrow1.png') }}" alt="an arrow that points the shuffle button">
+        </div>
+
+        <form><section class="tags-input">
+            <ul id="tags"></ul>  
+            <div  class="searchButtons-container"><button id="filterBtn" class="btnFilter searchButton">
+                <i class="fa-solid fa-filter"></i></button>
+            </div>
+            <div class="search-container">
                 <input type="text" id="search" placeholder="Enter ingredients" >
-                <button type="submit" id="submit" class="btnSrch">Search</button>
-                <button type="button" class="btnShuffle" onclick="shuffleRecipes()"> 
-                    <i id="shuffle" class="fa-solid fa-shuffle" aria-hidden="true"></i>
-                </button>
-            </div></form>
+                <button type="submit" id="submit" class="btnSrch">Search</button> 
+            </div>
+            <div  class="searchButtons-container"><button type="button" class="btnShuffle searchButton" onclick="shuffleRecipes()"> 
+                <i id="shuffle" class="fa-solid fa-shuffle" ></i>
+            </button></div>
+        </section></form>
 
-    </div>
+       
+        <section id="filterModal" class="modal">
+          <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Filter Options</h2>
+            <form id="filterForm" class="filter-form">
+            
+            <!-- Diet Labels -->
+            <div class="dietlabels filterCategorie ftc1"> 
+               <h3>Diet Labels</h3>
+               <label class="filterLabel"><input type="checkbox" name="diet" id="balanced"> Balanced (Protein/Fat/Carb values in 15/35/50 ratio)</label><br>
+               <label class="filterLabel"><input type="checkbox" name="diet" id="high-fiber"> High-Fiber (More than 5g fiber per serving)</label><br>
+               <label class="filterLabel"><input type="checkbox" name="diet" id="high-protein"> High-Protein (More than 50% of total calories from proteins)</label><br>
+               <label class="filterLabel"><input type="checkbox" name="diet" id="low-carb"> Low-Carb (Less than 20% of total calories from carbs)</label><br>
+               <label class="filterLabel"><input type="checkbox" name="diet" id="low-fat"> Low-Fat (Less than 15% of total calories from fat)</label><br>
+               <label class="filterLabel"><input type="checkbox" name="diet" id="low-sodium"> Low-Sodium (Less than 140mg Na per serving)</label><br>
+            </div>
+
+            <!-- Health Labels -->
+            <div class="healthlabels filterCategorie ftc1"> 
+               <h3>Health Labels</h3>
+               <label class="filterLabel"><input type="checkbox" name="health" id="crustacean-free"> Crustacean-free</label>
+               <label class="filterLabel"><input type="checkbox" name="health" id="dairy-free"> Dairy-free (No dairy; no lactose)</label>
+               <label class="filterLabel"><input type="checkbox" name="health" id="DASH"> Dietary Approaches to Stop Hypertension (Dash)</label>
+               <label class="filterLabel"><input type="checkbox" name="health" id="alcohol-free"> Alcohol-free</label>
+               <label class="filterLabel"><input type="checkbox" name="health" id="immuno-supportive"> Immune-Supportive</label>
+               <label class="filterLabel"><input type="checkbox" name="health" id="low-potassium"> Low-Potassium</label>
+               <label class="filterLabel"><input type="checkbox" name="health" id="halal"> Halal</label>
+               <label class="filterLabel"><input type="checkbox" name="health" id="kosher"> Kosher</label>
+               <label class="filterLabel"><input type="checkbox" name="health" id="vegan"> Vegan</label>
+               <label class="filterLabel"><input type="checkbox" name="health" id="vegetarian"> Vegetarian</label>                
+               <label class="filterLabel"><input type="checkbox" name="health" id="sugar-free"> Sugar-free</label>
+               <label class="filterLabel"><input type="checkbox" name="health" id="gluten-free"> Gluten-Free</label>
+               <label class="filterLabel"><input type="checkbox" name="health" id="dairy-free-again"> Dairy-Free</label>
+               <label class="filterLabel"><input type="checkbox" name="health" id="egg-free"> Eggs-free</label> 
+               <label class="filterLabel"><input type="checkbox" name="health" id="celery-free"> Celery-free</label>
+               <label class="filterLabel"><input type="checkbox" name="health" id="peanut-free"> Peanut-free</label>
+            </div>
+
+            <!-- Meal Types -->
+            <div class="mealTypes filterCategorie ftc2"> 
+               <h3>Meal Types</h3>
+               <label class="filterLabel"><input type="checkbox" name="mealType" id="Breakfast"> Breakfast</label><br>
+               <label class="filterLabel"><input type="checkbox" name="mealType" id="Lunch"> Lunch</label><br>
+               <label class="filterLabel"><input type="checkbox" name="mealType" id="Dinner"> Dinner</label><br>
+               <label class="filterLabel"><input type="checkbox" name="mealType" id="Snack"> Snack</label><br>
+               <label class="filterLabel"><input type="checkbox" name="mealType" id="Teatime"> Teatime</label><br>
+            </div>
+
+             <button type="submit" class="filterSubmitBtn">Apply Filters</button>
+            </form>
+           
+          </div>
+        </section>
+    </section>
 
    </header>
+   <main> 
 
-    <div class="background-image"> 
+    <section class="section-results"> 
         <div id="results"></div>
-    </div>
-    <button id="load-more"> show more </button> 
+        <div id="error-message" style="
+        display: none;
+        position: absolute;
+        top: 50%;
+        left: 30%;
+        right: 30%;
+        color: #ff7300;
+        background-color: #333;
+        box-shadow: 0px 12px 12px rgba(29, 29, 29, 0.452) ;
+        border: #000;
+        border-radius: 15px;
+        font-size: 1rem;
+        min-height: 30svh;
+        max-width: 80%;
+        margin: 50px auto;
+        text-align: center;
+        justify-content: center;
+        align-items: center;"></div>
+    </section>
+    <button id="load-more" onclick="loadMoreRecipes()"> Load more </button> 
 
+    </main>
     <footer>
         <div id="footer" class="footer">
         <div class="row">

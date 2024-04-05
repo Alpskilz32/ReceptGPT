@@ -1,62 +1,37 @@
 [
     {
-        "userName": "User1",
-        "stars": 5,
-        "reviewText": "This recipe is amazing!"
-    },
-    {
-        "userName": "User2",
+        "userName": "olivia",
         "stars": 4,
-        "reviewText": "Pretty good, but could use some improvements."
+        "reviewText": "Pretty good, but I already know some recipes that I learned from my meemaw. "
     },
     {
-        "userName": "User3",
+        "userName": "john",
         "stars": 3,
         "reviewText": "It's okay, nothing special."
     },
     {
-        "userName": "User4",
-        "stars": "5",
-        "reviewText": "Looks good!!"
+        "userName": "Tom",
+        "stars": "4",
+        "reviewText": "ReceptGPT is gebruiksvriendelijk, boordevol heerlijke recepten en biedt geweldige zoekopties."
     },
     {
-        "userName": "Daan",
-        "stars": 4,
-        "reviewText": "good, I like your idea"
-    },
-    {
-        "userName": "User1",
+        "userName": "Shaher",
         "stars": 5,
-        "reviewText": "This recipe is amazing!"
+        "reviewText": "Mijn buikje is gevuld nu, veel makkelijke en snelle recepeten. Perfect voor de ramadan."
     },
     {
-        "userName": "User2",
+        "userName": "Abdullah",
         "stars": 4,
-        "reviewText": "Pretty good, but could use some improvements."
+        "reviewText": "wauw, uitmuntende recepturen."
     },
     {
-        "userName": "User3",
+        "userName": "belal",
         "stars": 3,
-        "reviewText": "It's okay, nothing special."
+        "reviewText": "een hele goede app, maar ik had liefst een optie om mijn alergieen te kunnen vermelden."
     },
     {
-        "userName": "User4",
-        "stars": "5",
-        "reviewText": "Looks good!!"
-    },
-    {
-        "userName": "Daan",
+        "userName": "Seyf",
         "stars": 4,
-        "reviewText": "good, I like your idea"
-    },
-    {
-        "userName": "h",
-        "stars": 4,
-        "reviewText": "4rrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr  rrrrrrrrrrrrrrr rrrrrrrrrrrrrr rrrrrrrrrrrrrrrrrrrrrrrrrr rrrrrrrrrrrrrrrrrrrrrrrr rrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr r mkldddddd om4r fofm4 rrrrrrrrrrrrrrrrrrrrr f kgr,                rgfgkr"
-    },
-    {
-        "userName": "h",
-        "stars": 2,
-        "reviewText": "What is Lorem Ipsum?\nLorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more re"
+        "reviewText": "Het werkt goed, ook een perfecte filter met heel veel opties."
     }
 ]
